@@ -21,7 +21,7 @@ function beginBuild {
 
   mkdir -p $BUILDPATH
   cd $BUILDPATH
-  
+
   echo -e "\n\033[0;32mSyncing recovery source and device tree..\033[0m"
   repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
   repo sync -j$(nproc)
@@ -59,7 +59,7 @@ function checkGitAuthority {
     [ $MISSINGGITAUTHORITY == 1 ] && MISSINGGITAUTHORITY=3 || MISSINGGITAUTHORITY=2
   fi
 
-  if [ $MISSINGGITAUTHORITY > 0]]; then
+  if [ $MISSINGGITAUTHORITY -gt 0]; then
     if [ $MISSINGGITAUTHORITY == 3]; then
       echo -e "\e[1;31mError:\e[0m Please set your Git username and email identity!"
     else
