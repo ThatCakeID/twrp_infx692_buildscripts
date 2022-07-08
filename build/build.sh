@@ -59,11 +59,11 @@ function checkGitAuthority {
     [ $MISSINGGITAUTHORITY == 1 ] && MISSINGGITAUTHORITY=3 || MISSINGGITAUTHORITY=2
   fi
 
-  if [ $MISSINGGITAUTHORITY -gt 0]; then
-    if [ $MISSINGGITAUTHORITY == 3]; then
+  if [ $MISSINGGITAUTHORITY -gt 0 ]; then
+    if [ $MISSINGGITAUTHORITY == 3 ]; then
       echo -e "\e[1;31mError:\e[0m Please set your Git username and email identity!"
     else
-      [$MISSINGGITAUTHORITY == 1] && echo -e "\e[1;31mError:\e[0m Please set your Git email identity!" || echo -e "\e[1;31mError:\e[0m Please set your Git username identity!"
+      [ $MISSINGGITAUTHORITY == 1 ] && echo -e "\e[1;31mError:\e[0m Please set your Git email identity!" || echo -e "\e[1;31mError:\e[0m Please set your Git username identity!"
     fi
     exit 1
   fi
