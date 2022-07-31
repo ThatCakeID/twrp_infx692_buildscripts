@@ -27,10 +27,14 @@ function beginBuild {
   repo sync -j$(nproc)
 
   # Cherry-pick patches from https://gerrit.twrp.me/c/android_bootable_recovery/+/5405
+  cd bootable/recovery
   git fetch https://gerrit.twrp.me/android_bootable_recovery refs/changes/05/5405/25 && git cherry-pick FETCH_HEAD
+  cd ../..
 
   # Another cherry-pick patches, this time from https://gerrit.twrp.me/c/android_system_vold/+/5540
+  cd system/vold
   git fetch https://gerrit.twrp.me/android_system_vold refs/changes/40/5540/7 && git cherry-pick FETCH_HEAD
+  cd ../..
 
   git clone $DT_LINK --depth=1 --single-branch $DT_PATH
 
