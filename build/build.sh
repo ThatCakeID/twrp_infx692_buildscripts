@@ -3,7 +3,7 @@ function importEnv {
   MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git"
   MANIFEST_BRANCH="twrp-12.1"
   DEVICE="X692"
-  DT_LINK="https://github.com/ryenyuku/twrp_device_infinix_x692.git"
+  DT_LINK="https://github.com/ryenyuku/twrp_device_infinix_X692.git"
   DT_PATH="device/infinix/X692"
   TARGET="recoveryimage"
 }
